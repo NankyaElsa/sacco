@@ -27,6 +27,16 @@ Auth::routes();
 Route::get('/deposits', 'App\Http\Controllers\DepositsController@index')->name('deposits');
 Route::get('/admin/members', 'App\Http\Controllers\MembersController@index')->name('members');
 
+use App\Http\Controllers\DepositsController;
+Route::get('/upload', 'App\Http\Controllers\AvailableDepositsImportController@show');
+Route::post('/upload', 'App\Http\Controllers\AvailableDepositsImportController@upload')->name('upload');
+
+Route::get('/admin/addmembers', 'App\Http\Controllers\MembersController@add_members');
+Route::post('/admin/addmembers', 'App\Http\Controllers\MembersController@store_members');
+
+
+
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
@@ -45,5 +55,14 @@ Route::get('/user/{name}/{id}', function($name, $id){
 	return 'This is '+ $name;
 });
 */
+/*This route is to enable the user to see the form and fields to use */
+// Route::get('/register', function() {
+// 	return view('register');
+// });
+
+// Route::post('/register', function(){
+// 	$register = new 
+// })
+
 
 
