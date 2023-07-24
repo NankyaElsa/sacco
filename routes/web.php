@@ -23,7 +23,6 @@ Auth::routes();
 Route::get('/admin', 'App\Http\Controllers\HomeController@index')->name('dashboard');
 
 Route::get('/deposits', [App\Http\Controllers\DepositsController::class, 'index'])->name('deposits');
-Auth::routes();
 Route::get('/deposits', 'App\Http\Controllers\DepositsController@index')->name('deposits');
 Route::get('/admin/members', 'App\Http\Controllers\MembersController@index')->name('members');
 
@@ -49,20 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
 
-/*Routes are used to create urls and say what to display on those urls */
-/*creating dinamic urls
-Route::get('/user/{name}/{id}', function($name, $id){
-	return 'This is '+ $name;
-});
-*/
-/*This route is to enable the user to see the form and fields to use */
-// Route::get('/register', function() {
-// 	return view('register');
-// });
 
-// Route::post('/register', function(){
-// 	$register = new 
-// })
 
 
 

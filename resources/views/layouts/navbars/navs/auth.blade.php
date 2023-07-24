@@ -27,7 +27,7 @@
                 </li>
                 <li class="nav-item @if($activePage == 'table') active @endif">
                     <a class="nav-link" href="{{route('page.index', 'table')}}">
-                        <span class="no-icon">{{ __('sacco members') }}</span>
+                        <span class="no-icon">{{ __('Add sacco members') }}</span>
                     </a>
                 </li>
                 <li class="nav-item @if($activePage == 'user') active @endif">
